@@ -1,0 +1,11 @@
+<h1>Editando a Tarefa: {{task?.title}}</h1>
+<form action="/tasks/edit" method="POST">
+    <input type="hidden" name="id" value="{{task?.id}}">
+    <div class="form-control">
+        <label for="title">Título: </label>
+        <input [(ngModel)]="title" name="title" type="text" value="{{task?.title}}">
+        <label for="description">Descrição:</label>
+        <textarea [(ngModel)]="description"  name="description" placeholder="Descreva a tarefa...">{{task?.description}}</textarea>
+    </div>
+    <input type="submit" value="Editar" (click)="atualizaTarefa()">
+</form>

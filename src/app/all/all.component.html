@@ -1,0 +1,22 @@
+<h1>Todas as Tarefas</h1>
+<ul class="task-list" *ngFor="let item of tasks">
+        <li>
+            <a href="/" class="{{item.done ? 'title done' : 'title'}}">{{item.title}}</a>
+            <div class="actions">
+                <form action="/updatestatus" method="post">
+                    <input type="hidden" name="id" value="{{item.id}}">
+                    <input type="hidden" name="done" value="{{item.done}}">
+                    <button type="submit" (click)="atualizaStatus(item.id)">
+                        <i class="bi bi-check2"></i>
+                    </button>
+                </form>
+                <a href="edit/{{item.id}}"><i class="bi bi-pencil-square"></i></a>
+                <form action="/remove" method="POST">
+                    <input type="hidden" name="id" value="{{item.id}}">
+                    <button type="submit" (click)="deletaTarefa(item.id)">
+                        <a><i class="bi bi-x-lg"></i></a>
+                    </button>
+                </form>
+            </div>
+        </li>
+</ul>
