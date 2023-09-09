@@ -8,10 +8,10 @@ import { TaskService } from '../task.service';
   styleUrls: ['./all.component.css']
 })
 export class AllComponent {
-  tasks : Task[]
+  tasks : Task[] 
 
   constructor(private serv: TaskService) {
-      this.tasks = this.serv.tasks
+    this.tasks = this.serv.tasks
   }
   atualizaStatus(id : number) {
     this.serv.updateStatus(id)

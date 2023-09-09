@@ -11,12 +11,10 @@ export class CreateComponent {
   title : string = ''
   description : string = '' 
 
-  constructor(private serv: TaskService, private router: Router) {
-
-  }
+  constructor(private serv: TaskService, private router: Router) { }
+  
   adicionaTarefa() {
     this.serv.addTask(this.title, this.description)
-    console.log(this.title + this.description)
     this.router.navigate(['all'])
   }
 }

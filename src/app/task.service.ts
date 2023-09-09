@@ -5,7 +5,7 @@ import { Task } from '../models/task'
   providedIn: 'root'
 })
 export class TaskService {
-  tasks: Task[] = []
+  tasks: Task[] = [] 
 
   constructor() {
     this.mock()
@@ -22,7 +22,7 @@ export class TaskService {
         return this.tasks[index]
       }
     }
-    return null
+    return
   }
   updateStatus(id : number) {
     if(this.tasks[id - 1].done){
